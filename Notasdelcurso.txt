@@ -24,3 +24,7 @@ necesita de un compilador. El navegador lee directamente el código, sin necesid
 terceros. Por tanto, se le reconoce como uno de los tres lenguajes nativos de la web 
 junto a HTML (contenido y su estructura) y a CSS (diseño del contenido y su estructura).
 
+
+Python  es el lenguaje que se utiliza para el backend o creacion de videojuegos, debido a que su sintaxis
+se hace facil de interpretar al lenguaje humano, manejar un volumen grande de datos
+

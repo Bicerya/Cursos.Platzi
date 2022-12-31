@@ -21,11 +21,13 @@ let array = [number1,number2,number3,number4,number5,number6];
 
 //decimos que el maximo sera 0
 let max = 0;
+let tamano = array.length
 
 //creamos el ciclo donde validaremos cual es el numero mas grande a traves de la validacion del array
-for (let i = 0; i < array.length; i++) 
+for (let i = 0; i < tamano; i++) 
 {
-  if(array[i] > max) {
+  if(array[i] > max)
+  {
     max = array[i];
   }
 }
