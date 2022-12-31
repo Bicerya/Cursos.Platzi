@@ -1,0 +1,26 @@
+Lenguajes de programación
+Los podemos ver como la forma cotidiana en que nos comunicamos con otras personas, 
+utilizamos una serie de palabras que están compuestas por letras, las cuales tienen un 
+significado, y cada vez que las unimos formamos frases que utilizamos como canal de 
+comunicación con otras personas. Este conjunto de palabras y letras son códigos que 
+tienen un sentido y pueden variar en cada idioma.
+De esta forma nos comunicamos con una computadora, a la que le enviamos un mensaje o 
+instrucciones sobre un algoritmo que hemos formado y le indicaremos que debe realizar 
+ciertas operaciones. Este conjunto de códigos que forman un sentido lógico para ella, 
+los traduce a la cantidad de bits que necesita para operar y devolver un resultado. 
+Así es como se crea un canal de comunicación con la computadora, y esto que utilizamos 
+para dicha comunicación es un lenguaje de programación 😃
+💻 Hay diferentes lenguajes de programación, pero lo que varía entre ellos es 
+su sintaxis.
+
+
+✨ Para saber que lenguaje de programación usar, primero define cual es la 
+necesidad que tienes, en base a ello puedes iniciar esa búsqueda.
+
+
+⚡ JavaScript es el lenguaje de programación encargado de dotar de mayor interactividad 
+y dinamismo a las páginas web. Cuando JavaScript se ejecuta en el navegador, no 
+necesita de un compilador. El navegador lee directamente el código, sin necesidad de 
+terceros. Por tanto, se le reconoce como uno de los tres lenguajes nativos de la web 
+junto a HTML (contenido y su estructura) y a CSS (diseño del contenido y su estructura).
+
