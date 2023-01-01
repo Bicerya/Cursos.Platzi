@@ -25,6 +25,17 @@ terceros. Por tanto, se le reconoce como uno de los tres lenguajes nativos de la
 junto a HTML (contenido y su estructura) y a CSS (diseño del contenido y su estructura).
 
 
-Python  es el lenguaje que se utiliza para el backend o creacion de videojuegos, debido a que su sintaxis
+💻 Python  
+
+es el lenguaje que se utiliza para el backend o creacion de videojuegos, debido a que su sintaxis
 se hace facil de interpretar al lenguaje humano, manejar un volumen grande de datos
+
+
+💻 PHP 
+
+Es un lenguaje de programacion destinado a desarrollar aplicaciones para la web y crear paginas web
+favoreciendo la conexion entre servidores y la interfaz del usuario.
+Entre los factores que hicieron que PHP se volviera tan popular, se destaca el hecho de que es de codigo abierto
+
+"<?php `algo que decir` ?>" esto nos indica que se debe de ejecutar codigo dentro de PHP
 
