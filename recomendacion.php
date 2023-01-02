@@ -4,11 +4,102 @@
   </head>
   <body>
 
-  <?php
+<?php
 
-// Hola trate de hacer el codigo lo mejor legible espero lo entiedas
+$weather = array("Bogotá" => "Frio", 
+                "Monteria" => "Cálido", 
+                "Medellin" => "Templado");
 
-// 1. Aquí definimos los array asociativos (cambie el orden de los elementos para realizar mi solucion)
+$location = array("Guajira" => "Norte", 
+                  "Leticia"=>"Sur", 
+                  "SAntander"=>"Este", 
+                  "Antioquia"=>"Oeste");
+
+$tourism = array("Santa Marta"=>"Mar", 
+                "Villavicencio"=>"Llano",
+                "Rioacha"=>"Desierto", 
+                "Quindio"=>"Valle" );
+
+$busqueda = readline("Seleccione la opción de su interes: 
+                        1. `Clima` 2. `Ubicación` 3. `Turismo`: ");
+
+switch ($busqueda){
+  case "1":
+    $clima = readline("Seleccione el tipo de clima qué desea: 
+                        1. `Frio` 2. `Cálido` 3. `Templado`: ");
+    switch ($clima){
+      case "Frio":
+        $recomen = array_search($clima, $weather);
+        echo "El lugar recomendado es: ", "<p>", $recomen;
+      break;
+      case "Cálido":
+        $recomen = array_search($clima, $weather);
+        echo "El lugar recomendado es: ", "<p>", $recomen;   
+      break;
+      case "Templado":
+        $recomen = array_search($clima, $weather);
+        echo "El lugar recomendado es: ", "<p>", $recomen;
+      break;
+      default:
+        echo "No se encontraron recomendaciones que se ajusten a ti";
+      }
+  break;
+  
+  case "2":
+    $ubica = readline("Seleccione la ubicación de su interes :
+                        Norte - Sur - Este - Oeste ");
+    switch($ubica){
+      case "Norte":
+        $recomen = array_search($ubica, $location);
+        echo "El lugar recomendado es: ", "<p>", $recomen;
+      break;
+      case "Sur":
+        $recomen = array_search($ubica, $location);
+        echo "El lugar recomendado es: ", "<p>", $recomen;
+      break;
+      case "Este":
+        $recomen = array_search($ubica, $location);
+        echo "El lugar recomendado es: ", "<p>", $recomen;
+      break;
+      case "Oeste":
+        $recomen = array_search($ubica, $location);
+        echo "El lugar recomendado es: ", "<p>", $recomen;
+      break;
+      default:
+        echo "No se encontraron recomendaciones que se ajusten a ti";
+    }
+  break;
+  case "3":
+    $turism = readline("Seleccione lugar turístico de interes :
+                        Mar - Llano - Desierto - Valle ");
+    switch($turism){
+      case "Mar":
+        $recomen = array_search($turism, $tourism);
+        echo "El lugar recomendado es: ", "<p>", $recomen;
+      break;
+      case "Llano":
+        $recomen = array_search($turism, $tourism);
+        echo "El lugar recomendado es: ", "<p>", $recomen;
+      break;
+      case "Desierto":
+        $recomen = array_search($turism, $tourism);
+        echo "El lugar recomendado es: ", "<p>", $recomen;
+      break;
+      case "Valle":
+        $recomen = array_search($turism, $tourism);
+        echo "El lugar recomendado es: ", "<p>", $recomen;
+      break;
+      default:
+        echo "No se encontraron recomendaciones que se ajusten a ti";
+    }
+  break;
+  default:
+    echo "No se encontraron recomendaciones que se ajusten a ti";
+
+}
+?>
+
+/* 1. Aquí definimos los array asociativos
 $clima = array("frio" =>"Bogotá", 
                "caliente" => "Montería", 
                "templado" => "Medellín");
@@ -79,6 +170,7 @@ switch ($interes){
 }
 // 4. ¡¡Y listo!!
 ?>
+*/
     </form>
     <script src="https://replit.com/public/js/replit-badge.js" theme="dark" defer></script> 
   </body>

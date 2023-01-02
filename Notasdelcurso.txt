@@ -39,3 +39,7 @@ Entre los factores que hicieron que PHP se volviera tan popular, se destaca el h
 
 "<?php `algo que decir` ?>" esto nos indica que se debe de ejecutar codigo dentro de PHP
 
+Para comentar el codigo en PHP se pueden utilizar varias funciones 
+//Comentario
+#Comentario
+/*comentario*/
