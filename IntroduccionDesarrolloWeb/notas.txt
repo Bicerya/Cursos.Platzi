@@ -1,0 +1,11 @@
+Cuando empezamos a entender como funcionan las computadoras, vemos que muchas veces necesitamos pedir que nos regrese cierta información, después de nosotros introducirla.
+
+Procesos, entradas y salidas
+La información que nosotros introducimos a la computadora, es nuestra información de entrada (Input). 
+Para esta acción utilizamos ciertos periféricos o dispositivos de entrada como escáner, micrófono, teclado, cámara web, tableta gráfica, entre otros.
+
+Esta información es sometida a un proceso dentro de la computadora. Este tipo de proceso son en su mayoría cálculos matemáticos. 
+Estos cálculos nos permiten realizar operaciones complejas, editar imágenes, crear animaciones y efectos 3D etc.
+
+La computadora nos va a regresar una información de salida (Output), mediante algún periférico, como puede ser una bocina, un monitor o una impresora.
+
