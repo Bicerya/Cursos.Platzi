@@ -42,3 +42,19 @@ Ejemplo: Número 151 a binario
 1 → 1 (1 = 1, el dígito es 1)
 ⠀
 El resultado es 151(decimal) → 10010111(binario)
+
+
+¿Cuál es la diferencia entre Bytes y Bits?
+Cada cero y uno es un Bit, que es nuestra unidad mínima de información. El conjunto de 8 Bits se convierte en un Byte
+
+La computadora utiliza los transistores para interpretar esta información y entender que tipo de información le estamos pasando.
+
+Los transistores función con dos estados, encendido y apagado, es decir uno y cero. 
+Todos y cada uno de nuestros archivos son un conjunto de bits, formando bytes, que en conjunto pueden ser interpretados como archivos de música, de video o de texto.
+
+!Hola!
+
+¿Cómo hacer letras y símbolo con ASCII?
+La computadora puede transformar entre código binario a código ASCII y nosotros podemos hacer lo mismo conociendo esta tabla
+Entonces, la información que empieza siendo un impulso eléctrico (o la carencia de este), 
+agrupado con otros 7, nos forma un paquete de información binaria, que se traduce en letras, números o signos.
