@@ -58,3 +58,84 @@ Todos y cada uno de nuestros archivos son un conjunto de bits, formando bytes, q
 La computadora puede transformar entre código binario a código ASCII y nosotros podemos hacer lo mismo conociendo esta tabla
 Entonces, la información que empieza siendo un impulso eléctrico (o la carencia de este), 
 agrupado con otros 7, nos forma un paquete de información binaria, que se traduce en letras, números o signos.
+
+¿Qué es Unicode?
+Es un código estandarizado e incluyente, que tiene incluidos todos los alfabetos, emojis y caracteres especiales. Puede formarse de 1 byte hasta 6 bytes
+
+Unicode es un estándar de codificación de caracteres diseñado para facilitar el tratamiento informático, transmisión y visualización de textos de numerosos idiomas 
+y disciplinas técnicas, además de textos clásicos de lenguas muertas. El término Unicode proviene de los tres objetivos perseguidos: universalidad, uniformidad y unicidad.
+
+RGB
+Es un formato de colores.
+Cada pixel dentro de una imagen está compuesta por 3 subpixeles: Rojo (Red), Verde (Green) y Azul (Blue) con un tono de 0 a 255.
+⠀
+Ejemplos:
+- Negro (0, 0, 0)
+- Blanco (255, 255, 255)
+- Rojo (255, 0, 0)
+⠀
+Combinando tonalidades se pueden formar colores específicos.
+⠀
+Ejemplos:
+- Plum Purple (178, 80, 228) - 10110010, 01010000, 11100100
+⠀
+Cada pixel representa un cálculo de la computadora.
+
+
+ARPANET 
+es el primer proyecto en implementar el protocolo TCP/IP (Transmission Control Protocol / Internet Protocol).
+
+El protocolo en grandes rasgos se difiere en 5 etapas que son la forma en la cual se genera y envía la información. a través de internet por medio de encabezados que contienen directamente la dirección de quien tiene que recibirlo que significa IP address. Esta dirección viene en el encabezado. Cuando la información llega al router de internet, se encarga de leer el header e identificar a cuál IP address corresponde la información. Divide la información en diferentes paquetes y a través de internet cada uno de los paquetes sigue la ruta más rápida para llegar a la IP address automáticamente toda la información se junta y esa IP address que significa esa computadora recibe la información.
+
+¿Cómo se envía la información en internet?
+La información se trasmite en internet, mediante diferentes protocolos
+
+TCP/IP es el lenguaje que emplean dos sistemas (ordenadores) para hablar entre sí. Ambos deben de hablar el mismo idioma.
+En internet circulan más protocolos:
+FTP = transmisión de ficheros
+SMTP y POP envío y recepción de correos electrónicos
+TELNET = establece conexiones remotas con otros ordenadores.
+
+Application -   HTTP/FTP
+Transport   -   TCP,UDP
+Network     -   IP, Routers
+Data Link   -   Ethernet, switches
+Physical    -   Cables
+
+
+¿De dónde viene el Internet?
+⠀⠀
+El internet viene directamente de los cables, los cuales hacen que podamos establecer una conexión con otras computadoras.
+⠀
+La mayoría están dentro del mar. Internet backbone (mapa de infraestructura).
+⠀
+Internet es una abreviación de Internetworking, se creó lso años 70 para referirse a los cables físicos y las computadoras que se conectan entre sí.
+⠀
+Nace de un proyecto de investigación académico llamado ARPANET (Advanced Research Projects Agency NETwork), la intención era conectar computadoras para compartir información.
+⠀
+Posteriormente empiezan a surgir los protocolos de Internet.
+
+
+¿QUÉ TIPOS DE ISP EXISTEN?
+En los inicios de Internet, los únicos ISP que tenían autorización para proporcionar conexiones eran organismos gubernamentales, empresas de investigación y universidades. 
+Con el paso de los años y la expansión de la red se multiplicaron los ISP, aunque estas son, en su mayoría, empresas de telecomunicaciones.
+
+PROVEEDORES DE ACCESO TELEFÓNICO.
+PROVEEDORES DE ACCESO POR DSL.
+PROVEEDORES DE ACCESO POR CABLE.
+PROVEEDORES DE BANDA ANCHA INALÁMBRICA.
+PROVEEDORES DE ACCESO POR SATÉLITE.
+PROVEEDORES DE FIBRA ÓPTICA.
+
+
+IPS y DNS
+
+El IP address es un conjunto de números que identifica a un equipo que utilice el protocolo IPo, que corresponde al nivel de red del modelo TCP/iP.
+Los DNS se crean para que de manera sencilla podamos identificar a quien se va a contactar sin tener que escribir el IP address 
+(Ej: El IP address de Google es 172.217.7.23) siempre que queramos entrar a una pagina web.
+
+El IP address sigue ahí pero esta oculto bajo el nombre de la empresa o la pagina web a la que queramos acceder.
+Cada dispositivo tiene una IP única, que los identifica y les permite conectarse. Hace una petición a los DNS (Domain Name System) para que le permite conectarse.
+Nosotros cuando estamos navegando y buscamos algo hacemos una petición al DNS sobre cuál es la IP de la URL que estamos buscando y el DNS nos devuelve la IP 
+que buscamos y llegamos a la Laguna que queremos.
+
