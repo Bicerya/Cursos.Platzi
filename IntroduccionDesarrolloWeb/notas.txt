@@ -139,3 +139,76 @@ Cada dispositivo tiene una IP única, que los identifica y les permite conectars
 Nosotros cuando estamos navegando y buscamos algo hacemos una petición al DNS sobre cuál es la IP de la URL que estamos buscando y el DNS nos devuelve la IP 
 que buscamos y llegamos a la Laguna que queremos.
 
+El primer desarrollador Web
+
+⠀
+Utilizamos la Web para compartir información.
+⠀
+Hubo un primer desarrollador Web, su nombre es Tim Berners-Lee.
+
+    Hizo la propuesta de W3, la cual es una forma de globalizar la información y poderla linkear.
+    Todo lo generó a través de una computadora NEXT.
+    Escribió las 3 tecnologías fundamentales para el desarrollo Web:
+        HTML: Lenguaje de marcado para la Web.
+        URL: Dirección a la que nos conectamos.
+        HTTP: Forma para comunicarnos a través de peticiones
+    Construyó el primer servidor Web.
+    Construyó el primer navegador.
+
+W3C (World Wide Web Consortium)
+
+Trabajan los estándares, los cuales son las tecnologpias que se trabajan en la Web. 
+La W3C se encarga de realizar las mejoras en la Web, modificaciones, generar propuestas, etc.
+Existen muchas empresas que trabajan para mejorar la Web, junto a W3C
+
+¿Quiénes perteneces al W3C?
+
+El momento de escribir esto, el W3C cuenta con 462 miembros, entre ellos se encuentran
+
+    Airbnb Inc.
+    Facebook
+    Alibaba Group
+    Amazon
+    Apple, Inc.
+    BBVA
+    Cisco
+    Indeed
+
+¿Qué regula el W3C?
+
+La Wec regula diferentes protocolos como:
+
+    CGI
+    CSS
+    DOM
+    GRDDL
+    HTML
+    MathML
+    OWL
+    P3P
+    PROV
+    RDF
+    SISR
+    SKOS
+    SMIL
+    SOAP
+    SPARQL
+    SRGS
+    SSML
+    SVG
+    VoiceXML
+    XHTML
+    XHTML+Voice
+    XML
+    XML Events
+    XML Information Set
+    XML Schema
+    XPath
+    XQuery
+    XSL-FO
+    XSLT
+    WCAG
+    WSDL
+    XForms
+
+    
