@@ -85,7 +85,11 @@ Cada pixel representa un cálculo de la computadora.
 ARPANET 
 es el primer proyecto en implementar el protocolo TCP/IP (Transmission Control Protocol / Internet Protocol).
 
-El protocolo en grandes rasgos se difiere en 5 etapas que son la forma en la cual se genera y envía la información. a través de internet por medio de encabezados que contienen directamente la dirección de quien tiene que recibirlo que significa IP address. Esta dirección viene en el encabezado. Cuando la información llega al router de internet, se encarga de leer el header e identificar a cuál IP address corresponde la información. Divide la información en diferentes paquetes y a través de internet cada uno de los paquetes sigue la ruta más rápida para llegar a la IP address automáticamente toda la información se junta y esa IP address que significa esa computadora recibe la información.
+El protocolo en grandes rasgos se difiere en 5 etapas que son la forma en la cual se genera y envía la información. 
+a través de internet por medio de encabezados que contienen directamente la dirección de quien tiene que recibirlo que significa IP address. 
+Esta dirección viene en el encabezado. Cuando la información llega al router de internet, se encarga de leer el header e identificar a cuál IP address corresponde la información. 
+Divide la información en diferentes paquetes y a través de internet cada uno de los paquetes sigue la ruta más rápida para llegar a la IP address automáticamente toda la 
+información se junta y esa IP address que significa esa computadora recibe la información.
 
 ¿Cómo se envía la información en internet?
 La información se trasmite en internet, mediante diferentes protocolos
@@ -211,4 +215,137 @@ La Wec regula diferentes protocolos como:
     WSDL
     XForms
 
-    
+Métodos dentro de HTTP:
+GET: Solicita datos
+POST: Envía datos.
+PUT: Crea o reemplaza datos.
+DELETE: Borra datos específicos.
+
+DOM (Document Object Model)
+DOM es un árbol que se genera con la información de las etiquetas HTML.
+Proporciona una representación estructural del documento, permitiendo la modificación de su contenido o su presentación visual.
+Con JS ya podremos generar interactividad a través del DOM.
+
+¿Cómo se genera el árbol DOM?
+El DOM se genera a partir del fichero con extensión .html y sigue distintos pasos para generarse:
+
+Convertir los bytes a caracteres.
+Pasar de caracteres a tokens.
+Generar los nodos.
+Construir el árbol DOM.
+
+El CSSOM
+Llamamos CSSOM al árbol de nodos que indicará al navegador cómo se debe pintar el DOM (el contenido que tenemos para pintar) dadas las distintas reglas que tengamos de CSS.
+
+¿Cómo se genera el árbol CSSOM?
+El CSSOM se genera a partir del fichero con extensión .css y sigue exactamente los mismos pasos que el DOM para generarse:
+
+Convertir los bytes a carácteres.
+Pasar de carácteres a tokens.
+Generar los nodos.
+Construir el árbol CSSOM.
+
+¿Qué es el Render Tree?
+Es un árbol que une el DOM y CSSOM para renderizarlos, creando un código que pueda interpretar el navegador. 
+De esta manera se generan todas las páginas web que vamos cargando mientras navegamos.
+
+Proceso de renderizado
+Bytes: El navegador coge todo el código y lo transforma en bytes.
+
+Characters: El navegador transforma estos bytes en caracteres dependiendo de la codificación que le hemos pasado. Por ejemplo UTF-8.
+
+Tokens: Ahora transforma dichos caracteres en tokens, identificando el significado de los caracteres relacionándolo a etiquetas que generan cierto tipo de contenido. 
+W3C documenta todas la etiquetas.
+
+Nodos: Después de saber el dicho orden de los tokens hará una transformación a los nodos, estos nodos son objetos. 
+Dichos objetos son lo que el navegador sabe interpretar (Los elementos).
+
+DOM: Ya cuando el navegador tiene todos los nodos los ordena en un árbol jerárquico donde cada objeto tendrá una posición dependiendo su etiqueta.
+
+CSSROM: Transforma el CSS y une con el DOM. Asignando los estilos a cada elemento dentro del DOM.
+
+¿Que es el Layout?
+Es un esquema de la distribución de los elementos dentro de una página web. Se compone de una serie de bloques de ciertas dimensiones en los que se colocará el contenido. 
+Estos bloques suelen trazarse a través de etiquetas HTML comunes, como div, o semánticas, como header, nav, section, article, aside y footer, incorporadas en HTML5.
+
+Paint
+Paint o pintado es poner los detalles finales para que el proyecto se pueda ver como queríamos al principio. 
+Su velocidad es gran responsable de la velocidad final que se tenga al momento de cargar con el sitio.
+Es la parte final, así que después de esto podríamos interactuar con la página
+
+Problemas durante la carga de las páginas
+Si el proyecto fue creado sin cuidado, es muy fácil que ocurran ciertos problemas como:
+
+-   Páginas que tardan en cargar
+-   Videos que no se ven
+-   Imágenes con mala calidad
+
+Para evitar que estos problemas afecten a nuestras páginas, debemos tener una buena comprensión de todos y cada uno de los procesos que se llevan a cabo para modelar.
+
+¿Cómo se ejecuta el JavaScript en el navegador?
+Cuando llega un script al navegador, el JS Engine inicia un proceso el cual consta de:
+
+Recibir el código como un flujo de bytes UTF-16 y pasarlo a un decodificador de flujo de bytes (el cual hace parte del motor).
+El parser toma el código y lo descompone en tokens (los tokens son elementos de js como: let, new, símbolos de operaciones, functions, promises).
+Gracias al anterior parseo se genera una estructura de datos en forma de árbol, o Abstract Syntax Tree (AST).
+El intérprete recorre el AST y va generando el bytecode.
+El optimizing compiler optimiza el código bytecode a machine code y se reemplaza el código base.
+
+
+¿Para qué servían las tarjetas perforadas?
+Para almacenar información e ingresar instrucciones a una computadora
+2.
+¿Cómo convierte una computadora texto en unos y ceros?
+Las computadoras convierten texto y otros datos en binarios utilizando un valor asignado de códigos como ASCII y Unicode.
+3.
+¿Cuáles son periféricos de salida?
+Monitor, bocinas, audífonos e impresora.
+4.
+¿Cuáles son periféricos de entrada?
+Teclado, micrófono, cámara, mouse, escáner.
+5.
+En binario ¿cómo se representaría el número 38?
+00100110
+
+6.
+En binario ¿cómo se representaría el string “hola”?
+
+01101000 01101111 01101100 01100001
+
+7.
+¿Cuántos bits tiene un byte?
+Un byte tiene 8 bits.
+8.
+¿Cómo se forma un pixel?
+Un Pixel se forma por la combinación de tonos de 3 sub-píxeles que son rojo, verde y azul (RGB).
+9.
+¿Cómo representamos el color rojo en RGB?
+(255,0,0)
+10.
+¿Qué es ISP?
+Proveedor de servicios de Internet (Internet Service Provider).
+11.
+¿Cuáles fueron las tres tecnologías que dieron nacimiento a la web como la conocemos hoy en día?
+HTTP, IP y DNS.
+12.
+¿Quién creó el primer navegador?
+Tim Berners-Lee
+13.
+¿Qué significa WWW?
+World Wide Web
+14.
+¿Cuál es el protocolo que utilizamos para poder enviar y recibir peticiones en la web?
+HTTP
+15.
+¿Cuáles son todas las partes de un Critical Rendering Path?
+1. DOM 2. CSSOM 3. Render Tree 4. JS Engine 5. Layout 6. Paint
+REPASAR CLASE
+16.
+¿En qué paso del Critical Rendering Path, se combina el DOM y el CSSOM?
+Render Tree
+17.
+¿En qué paso del Critical Rendering Path comenzamos a crear la estructura del proyecto sin diseño?
+Layout
+18.
+HTML y CSS son dos de los principales estándares web.
+Verdadero
