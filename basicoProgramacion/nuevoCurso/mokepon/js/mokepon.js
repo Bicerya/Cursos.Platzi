@@ -1,6 +1,7 @@
 window.addEventListener('load', iniciarJuego)
 
 let ataqueJugador = 0
+let ataqueEnemigo = 0
 
 
 function iniciarJuego()
@@ -100,19 +101,55 @@ function aleatorio(min,max)
 function ataqueFuego()
 {
     ataqueJugador = 'Fuego'
-    alert(ataqueJugador)
+    alert('Elegiste el ataque de ' + ataqueJugador)
+    ataqueDelEnemigo()
 }
 
 function ataqueAgua()
 {
     ataqueJugador = 'Agua'
-    alert(ataqueJugador)
+    alert('Elegiste el ataque de ' + ataqueJugador)
+    ataqueDelEnemigo()
 }
 
 function ataqueTierra()
 {
     ataqueJugador = 'Tierra'
-    alert(ataqueJugador)
+    alert('Elegiste el ataque de ' + ataqueJugador)
+    ataqueDelEnemigo()
+}
+
+function ataqueDelEnemigo()
+{
+    ataqueEnemigoSeleccionado = aleatorio(1,3)
+    
+    if (ataqueEnemigoSeleccionado == 1)
+    {
+        ataqueEnemigo = 'Fuego'
+        alert('El Enemigo eligio el ataque de ' + ataqueEnemigo)
+    }
+    else if (ataqueEnemigoSeleccionado == 2)
+    {
+        ataqueEnemigo = 'Agua'
+        alert('El Enemigo eligio el ataque de ' + ataqueEnemigo)
+    }
+    else
+    {
+        ataqueEnemigo = 'Tierra'
+        alert('El Enemigo eligio el ataque de ' + ataqueEnemigo)
+    }
+
+    crearMensaje()
+}
+
+function crearMensaje()
+{
+    let sectionMensajes = document.getElementById('mensajes')
+
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = 'Tu mascota ataco con ' + ataqueJugador + ', la mascota del enemigo ataco con ' + ataqueEnemigo + ' - Pendiente'
+
+    sectionMensajes.appendChild(parrafo)
 }
 
 
