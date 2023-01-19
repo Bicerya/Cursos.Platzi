@@ -101,21 +101,18 @@ function aleatorio(min,max)
 function ataqueFuego()
 {
     ataqueJugador = 'Fuego'
-    alert('Elegiste el ataque de ' + ataqueJugador)
     ataqueDelEnemigo()
 }
 
 function ataqueAgua()
 {
     ataqueJugador = 'Agua'
-    alert('Elegiste el ataque de ' + ataqueJugador)
     ataqueDelEnemigo()
 }
 
 function ataqueTierra()
 {
     ataqueJugador = 'Tierra'
-    alert('Elegiste el ataque de ' + ataqueJugador)
     ataqueDelEnemigo()
 }
 
@@ -126,32 +123,42 @@ function ataqueDelEnemigo()
     if (ataqueEnemigoSeleccionado == 1)
     {
         ataqueEnemigo = 'Fuego'
-        alert('El Enemigo eligio el ataque de ' + ataqueEnemigo)
     }
     else if (ataqueEnemigoSeleccionado == 2)
     {
         ataqueEnemigo = 'Agua'
-        alert('El Enemigo eligio el ataque de ' + ataqueEnemigo)
     }
     else
     {
         ataqueEnemigo = 'Tierra'
-        alert('El Enemigo eligio el ataque de ' + ataqueEnemigo)
     }
+    combate()
 
-    crearMensaje()
 }
 
-function crearMensaje()
+function crearMensaje(resultado)
 {
     let sectionMensajes = document.getElementById('mensajes')
 
     let parrafo = document.createElement('p')
-    parrafo.innerHTML = 'Tu mascota ataco con ' + ataqueJugador + ', la mascota del enemigo ataco con ' + ataqueEnemigo + ' - Pendiente'
+    parrafo.innerHTML = 'Tu mascota ataco con ' + ataqueJugador + ', la mascota del enemigo ataco con ' + ataqueEnemigo + ' - ' +  resultado
 
     sectionMensajes.appendChild(parrafo)
 }
 
 
-
-
+function combate()
+{
+    if(ataqueEnemigo == ataqueJugador)
+    {
+        crearMensaje('Empate');
+    } 
+    else if ((ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra') || (ataqueJugador == 'Agua' && ataqueEnemigo == 'Fuego') || (ataqueJugador == 'Tierra' && ataqueEnemigo == 'Agua'))
+    {
+        crearMensaje('Ganaste!');
+    } 
+    else
+    {
+        crearMensaje('Perdiste 😢');
+    }
+}
