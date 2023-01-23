@@ -12,6 +12,14 @@ h1 - se puede utilizar directo la etiqueta que se quiere editar
     background-color: teal;
 }
 
+#seleccionar-mascota
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 label
 {
 background-color: tomato;
@@ -29,8 +37,5 @@ button
 
 body
 {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif   ;
-    color: rgba(60, 51, 193, 0.908);
-    background-color: rgba(175, 144, 71, 0.428);
-}  
+    background-color: beige;
+}
