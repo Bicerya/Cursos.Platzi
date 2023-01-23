@@ -3,13 +3,13 @@ h1 - se puede utilizar directo la etiqueta que se quiere editar
 .titulo - para etiquetas de tipo class
 #titulo - para etiquetas de tipo id  
 */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-#titulo 
+body
 {
-    color: hotpink;
-    width: 450px;
-    height: 50px;
-    background-color: teal;
+    font-family: 'Fredoka One', cursive;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
 }
 
 #seleccionar-mascota
@@ -18,6 +18,79 @@ h1 - se puede utilizar directo la etiqueta que se quiere editar
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    border: 10px;
+    margin: 10px;
+}
+
+#titulo 
+{
+    color: white;
+    font-size: 36px;
+    width: 450px;
+    height: 50px;
+    background-color: #1A5F16;
+    text-align: center;
+}
+
+.subtitulo
+{
+    color: #19dba4;
+    font-size: 24px;
+    text-align: center;
+}
+
+.tarjetas
+{
+    display: flex;
+    gap: 10px;
+
+}
+
+.tarjeta-de-mokepon img
+{
+    width: 90px;
+}
+
+#ratigueya
+{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 1px solid #265723;
+    text-align: center;
+    border-radius: 20px;
+}
+
+#hipodoge
+{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 1px solid #265723;
+    text-align: center;
+    border-radius: 20px;
+}
+
+#capipepo
+{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 1px solid #265723;
+    text-align: center;
+    border-radius: 20px;
+}
+
+input
+{
+    display: none;
 }
 
 label
@@ -32,10 +105,12 @@ input
 
 button
 {
-    background-color: blueviolet;
-}
-
-body
-{
-    background-color: beige;
+    width: 100px;
+    height: 40px;
+    background: rgb(153, 111, 47);
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 1px solid rgb(97, 57, 34);
+    text-align: center;
 }

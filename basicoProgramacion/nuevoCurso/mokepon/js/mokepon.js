@@ -39,9 +39,7 @@ function seleccionarMascotaJugador()
     let inputHipodoge = document.getElementById('hipodoge')
     let inputCapipepo = document.getElementById('capipepo')
     let inputRatigueya = document.getElementById('ratigueya')
-    let inputLangostelvis = document.getElementById('langostelvis')
-    let inputTucapalma = document.getElementById('tucapalma')
-    let inputPydos = document.getElementById('pydos')
+
     let spanMascotaJugador = document.getElementById('mascota-jugador')
 
     if (inputHipodoge.checked)
@@ -55,18 +53,6 @@ function seleccionarMascotaJugador()
     else if (inputRatigueya.checked)
     {
         spanMascotaJugador.innerHTML = 'Ratigueya'
-    }
-    else if (inputLangostelvis.checked)
-    {
-        spanMascotaJugador.innerHTML = 'Langostelvis'
-    }
-    else if (inputTucapalma.checked)
-    {
-        spanMascotaJugador.innerHTML = 'Tucapalma'
-    }
-    else if (inputPydos.checked)
-    {
-        spanMascotaJugador.innerHTML = 'Pydos'
     }
     else
     {
@@ -89,21 +75,9 @@ function seleccionarMascotaEnemigo()
     {
         spanMascotaEnemigo.innerHTML = 'Capipepo'
     }
-    else if (ataqueAleatorio == 3)
-    {
-        spanMascotaEnemigo.innerHTML = 'Ratigueya'
-    }
-    else if (ataqueAleatorio == 4)
-    {
-        spanMascotaEnemigo.innerHTML = 'Langostelvis'
-    }
-    else if (ataqueAleatorio == 5)
-    {
-        spanMascotaEnemigo.innerHTML = 'Tucapalma'
-    }
     else
     {
-        spanMascotaEnemigo.innerHTML = 'Pydos'
+        spanMascotaEnemigo.innerHTML = 'Ratigueya'
     }
 }
 
