@@ -1,3 +1,32 @@
+/* 
+h1 - se puede utilizar directo la etiqueta que se quiere editar
+.titulo - para etiquetas de tipo class
+#titulo - para etiquetas de tipo id  
+*/
+
+#titulo 
+{
+    color: hotpink;
+    width: 450px;
+    height: 50px;
+    background-color: teal;
+}
+
+label
+{
+background-color: tomato;
+}
+
+input
+{
+    background-color: aqua;
+}
+
+button
+{
+    background-color: blueviolet;
+}
+
 body
 {
     text-align: center;
