@@ -8,8 +8,8 @@ h1 - se puede utilizar directo la etiqueta que se quiere editar
 body
 {
     font-family: 'Poppins', sans-serif;
-    background: rgb(131,58,180);
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    background: rgb(125, 45, 179);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgb(51, 22, 155) 50%, rgb(37, 113, 43) 100%);
 }
 
 #seleccionar-mascota
@@ -75,7 +75,6 @@ body
 input
 {
     display: none;
-    background-color: aqua;
 }
 
 #boton-mascotas
@@ -88,4 +87,22 @@ input
     color: white;
     font-family: 'Poppins', sans-serif;
     margin-top: 30px;
+}
+
+#seleccionar-ataque
+{
+    flex-direction: column ;
+    align-items: center;
+}
+
+.boton-de-ataque
+{
+    background-color: #19dba4;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    border-color: transparent;
+    width: 100px;
+    font-family: 'Poppins', sans-serif;
 }
