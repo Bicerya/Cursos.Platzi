@@ -111,3 +111,27 @@ input
 {
     cursor: pointer;
 }
+
+#mensajes
+{
+    width: 280px;
+    background-color: rgb(218, 240, 157);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#boton-reiniciar
+{
+    border: none;
+    color: rgb(179, 97, 22);
+    font-family: 'Poppins', sans-serif;
+}
+
+#boton-reiniciar:hover 
+{
+    cursor: pointer;
+}
