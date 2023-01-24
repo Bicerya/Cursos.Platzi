@@ -64,7 +64,7 @@ function seleccionarMascotaJugador()
 
 function seleccionarMascotaEnemigo()
 {
-    let ataqueAleatorio = aleatorio(1,6)
+    let ataqueAleatorio = aleatorio(1,3)
     let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
 
     if (ataqueAleatorio == 1)
@@ -126,12 +126,24 @@ function ataqueDelEnemigo()
 
 function crearMensaje(resultado)
 {
-    let sectionMensajes = document.getElementById('mensajes')
+    let sectionMensajes = document.getElementById('resultado')
+    let resultadoDelJugador = document.getElementById('resultado-del-jugador')
+    let resultadoDelEnemigo = document.getElementById('resultado-del-enemigo')
 
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = `Tu mascota ataco con ${ataqueJugador} la mascota del enemigo ataco con ${ataqueEnemigo} ${resultado}`
+    let notificacion = document.createElement('p')
+    let nuevoAtaqueDelJugador = document.createElement('p')
+    let nuevoAtaqueDelEnemigo = document.createElement('p')
 
-    sectionMensajes.appendChild(parrafo)    
+    notificacion.innerHTML = resultado
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador
+    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
+
+    // let parrafo = document.createElement('p')
+    // parrafo.innerHTML = `Tu mascota ataco con ${ataqueJugador} la mascota del enemigo ataco con ${ataqueEnemigo} ${resultado}`
+
+    sectionMensajes.appendChild(notificacion)    
+    resultadoDelJugador.appendChild(nuevoAtaqueDelJugador) 
+    resultadoDelEnemigo.appendChild(nuevoAtaqueDelEnemigo) 
 }
 
 
@@ -193,7 +205,7 @@ function crearMensajeFinal(resultadoFinal)
     let botonReiniciar = document.getElementById('boton-reiniciar')
     botonReiniciar.addEventListener('click', reiniciarJuego)
 
-    botonReiniciar.style.display = 'block'
+    botonReiniciar.style.display = 'flex'
 }
 
 function reiniciarJuego()

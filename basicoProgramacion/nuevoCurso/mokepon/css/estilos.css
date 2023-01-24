@@ -106,3 +106,8 @@ input
     width: 100px;
     font-family: 'Poppins', sans-serif;
 }
+
+.boton-de-ataque:hover 
+{
+    cursor: pointer;
+}
