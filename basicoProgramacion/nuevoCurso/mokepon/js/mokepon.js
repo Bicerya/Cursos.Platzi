@@ -56,7 +56,7 @@ function seleccionarMascotaJugador()
     }
     else
     {
-        alert('No has seleccionado un Mokepon!')
+        spanMascotaJugador.innerHTML = 'Muertinho'
     }
 
     seleccionarMascotaEnemigo()
