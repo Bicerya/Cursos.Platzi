@@ -28,6 +28,7 @@ let opcionDeMokepones
 let inputHipodoge
 let inputCapipepo
 let inputRatigueya
+let mascotaJugador
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -43,9 +44,7 @@ class Mokepon
 }
 
 let hipodoge = new Mokepon('Hipodoge', './imagenes/mokepons_mokepon_hipodoge_attack.png', 5)
-
 let capipepo = new Mokepon('Capipepo', './imagenes/mokepons_mokepon_capipepo_attack.png', 5)
-
 let ratigueya = new Mokepon('Ratigueya', './imagenes/mokepons_mokepon_ratigueya_attack.png', 5)
 
 hipodoge.ataques.push
@@ -112,39 +111,32 @@ function seleccionarMascotaJugador()
 
     if (inputHipodoge.checked)
     {
-        spanMascotaJugador.innerHTML = 'Hipodoge'
+        spanMascotaJugador.innerHTML = inputHipodoge.id
+        mascotaJugador = inputHipodoge.id
     }
     else if (inputCapipepo.checked)
     {
-        spanMascotaJugador.innerHTML = 'Capipepo'
+        spanMascotaJugador.innerHTML = inputCapipepo.id
+        mascotaJugador = inputCapipepo.id
     }
     else if (inputRatigueya.checked)
     {
-        spanMascotaJugador.innerHTML = 'Ratigueya'
+        spanMascotaJugador.innerHTML = inputRatigueya.id
+        mascotaJugador = inputRatigueya.id
     }
     else
     {
         spanMascotaJugador.innerHTML = 'Muertinho'
     }
+    extraerAtaques(mascotaJugador)
     seleccionarMascotaEnemigo()
 }
 
 function seleccionarMascotaEnemigo()
 {
-    let ataqueAleatorio = aleatorio(1,3)
+    let mascotaAleatoria = aleatorio(0, mokepones.length - 1)
 
-    if (ataqueAleatorio == 1)
-    {
-        spanMascotaEnemigo.innerHTML = 'Hipodoge'
-    }
-    else if (ataqueAleatorio == 2)
-    {
-        spanMascotaEnemigo.innerHTML = 'Capipepo'
-    }
-    else
-    {
-        spanMascotaEnemigo.innerHTML = 'Ratigueya'
-    }
+    spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre
 }
 
 function aleatorio(min,max)
@@ -172,7 +164,7 @@ function ataqueTierra()
 
 function ataqueDelEnemigo()
 {
-    ataqueEnemigoSeleccionado = aleatorio(1,3)
+    ataqueEnemigoSeleccionado = aleatorio(0, mokepones.length - 1)
     
     if (ataqueEnemigoSeleccionado == 1)
     {
