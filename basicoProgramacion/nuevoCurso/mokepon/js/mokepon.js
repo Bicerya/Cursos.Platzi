@@ -19,12 +19,14 @@ const sectionMensajes = document.getElementById('resultado')
 const resultadoDelJugador = document.getElementById('resultado-del-jugador')
 const resultadoDelEnemigo = document.getElementById('resultado-del-enemigo')
 
-const contenedorTarjetas =document.getElementById('contenedorTarjetas')
+const contenedorTarjetas = document.getElementById('contenedorTarjetas')
+const contenedorAtaques = document.getElementById('contenedorAtaques')
 
 let mokepones = []
 let ataqueJugador
 let ataqueEnemigo
 let opcionDeMokepones
+let ataquesMokepon
 let inputHipodoge
 let inputCapipepo
 let inputRatigueya
@@ -142,6 +144,14 @@ function extraerAtaques(mascotaJugador)
         }
     }
     mostrarAtaques(ataques)
+}
+
+function mostrarAtaques(ataques)
+{
+    ataques.forEach((ataque) => {
+        ataquesMokepon = `<button id=${ataque.id} class="boton-de-ataque">${ataque.nombre}</button>`
+        contenedorAtaques.innerHTML += ataquesMokepon
+    })
 }
 
 function seleccionarMascotaEnemigo()
