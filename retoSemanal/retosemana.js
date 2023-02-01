@@ -46,7 +46,7 @@ export function solution(numbers)
     let multiplicadores = [3, 4, 5, 6, 7, 8];
     let factor = numbers[0] / multiplicadores[0];
 
-    for (let i = 1; i < multiplicadores.length; i++)
+    for (let i = 0; i < multiplicadores.length; i++)
     {
         let temporal = numbers[i] / multiplicadores[i];
         if (factor != temporal)
@@ -58,3 +58,20 @@ export function solution(numbers)
 }
   
 ////////////////////////////////////////////////////////////////////////////////
+
+function solution(numbers) 
+{
+    let multiplicadores = [3, 4, 5, 6, 7, 8];
+    let results = [];
+  
+    for (let i = 0; i < multiplicadores.length; i++) 
+    {
+        if (i >= numbers.length) 
+        break;
+        let factor = numbers[i] / multiplicadores[i];
+        results.push(factor);
+    }
+    return results;
+}
+
+  console.log(solution([27, 36, 45, 54, 63, 72]));
