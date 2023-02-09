@@ -229,7 +229,6 @@ function ataqueDelEnemigo()
 
 function crearMensaje(resultado)
 {
-    let notificacion = document.createElement('p')
     let nuevoAtaqueDelJugador = document.createElement('p')
     let nuevoAtaqueDelEnemigo = document.createElement('p')
 
