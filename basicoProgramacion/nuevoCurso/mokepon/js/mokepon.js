@@ -1,5 +1,3 @@
-window.addEventListener('load', iniciarJuego)
-
 const sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
 const sectionReiniciar = document.getElementById('reiniciar')
 const botonMascotaJugador = document.getElementById('boton-mascotas')
@@ -24,6 +22,8 @@ const contenedorAtaques = document.getElementById('contenedorAtaques')
 const sectionVerMapa = document.getElementById('ver-mapa')
 const mapa = document.getElementById('mapa')
 
+const anchoMaximoDelMapa = 350
+
 let mokepones = []
 let ataqueJugador =[]
 let ataqueEnemigo = []
@@ -47,8 +47,20 @@ let vidasJugador = 3
 let vidasEnemigo = 3
 let lienzo = mapa.getContext('2d')
 let intervalo
-let mapaBackgroud = new Image()
-mapaBackgroud.src = './imagenes/mokemap.png'
+let mapaBackground = new Image()
+mapaBackground.src = './imagenes/mokemap.png'
+let alturaQueBuscamos
+let anchoDelMapa = window.innerWidth - 20
+
+if (anchoDelMapa > anchoMaximoDelMapa) 
+{
+    anchoDelMapa = anchoMaximoDelMapa - 20
+}
+
+alturaQueBuscamos = anchoDelMapa * 600 / 800
+
+mapa.width = anchoDelMapa
+mapa.height = alturaQueBuscamos
 
 class Mokepon
 {
@@ -96,6 +108,14 @@ hipodoge.ataques.push(
     {nombre: '🌱', id: 'boton-tierra'},
 )
 
+hipodogeEnemigo.ataques.push(
+    {nombre: '💧', id: 'boton-agua'},
+    {nombre: '💧', id: 'boton-agua'},
+    {nombre: '💧', id: 'boton-agua'},
+    {nombre: '🔥', id: 'boton-fuego'},
+    {nombre: '🌱', id: 'boton-tierra'},
+)
+
 capipepo.ataques.push(
     {nombre: '🌱', id: 'boton-tierra'},
     {nombre: '🌱', id: 'boton-tierra'},
@@ -104,7 +124,23 @@ capipepo.ataques.push(
     {nombre: '🔥', id: 'boton-fuego'},
 )
 
+capipepoEnemigo.ataques.push(
+    {nombre: '🌱', id: 'boton-tierra'},
+    {nombre: '🌱', id: 'boton-tierra'},
+    {nombre: '🌱', id: 'boton-tierra'},
+    {nombre: '💧', id: 'boton-agua'},
+    {nombre: '🔥', id: 'boton-fuego'},
+)
+
 ratigueya.ataques.push(
+    {nombre: '🔥', id: 'boton-fuego'},
+    {nombre: '🔥', id: 'boton-fuego'},
+    {nombre: '🔥', id: 'boton-fuego'},
+    {nombre: '💧', id: 'boton-agua'},
+    {nombre: '🌱', id: 'boton-tierra'},
+)
+
+ratigueyaEnemigo.ataques.push(
     {nombre: '🔥', id: 'boton-fuego'},
     {nombre: '🔥', id: 'boton-fuego'},
     {nombre: '🔥', id: 'boton-fuego'},
@@ -143,7 +179,6 @@ function iniciarJuego()
 function seleccionarMascotaJugador()
 {
     sectionSeleccionarMascota.style.display = 'none'
-    //sectionSeleccionarAtaque.style.display = 'flex'
 
     if (inputHipodoge.checked)
     {
@@ -167,7 +202,6 @@ function seleccionarMascotaJugador()
     extraerAtaques(mascotaJugador)
     sectionVerMapa.style.display = 'flex'
     iniciarMapa()
-    seleccionarMascotaEnemigo()
 }
 
 function extraerAtaques(mascotaJugador)
@@ -217,7 +251,7 @@ function secuenciaAtaque()
                 console.log(ataqueJugador)
                 boton.disabled = true
             }
-            else if(e.target.textContent === '🌱')
+            else
             {
                 ataqueJugador.push('TIERRA')
                 boton.style.background = '#112f58'
@@ -246,7 +280,7 @@ function aleatorio(min,max)
 
 function ataqueAleatorioEnemigo()
 {
-    ataqueAleatorio = aleatorio(0, ataquesMokeponEnemigo.length - 1)
+    let ataqueAleatorio = aleatorio(0, ataquesMokeponEnemigo.length - 1)
     
     if (ataqueAleatorio == 0 || ataqueAleatorio == 1)
     {
@@ -270,19 +304,6 @@ function iniciarPelea()
     {
         combate()
     }
-}
-
-function crearMensaje(resultado)
-{
-    let nuevoAtaqueDelJugador = document.createElement('p')
-    let nuevoAtaqueDelEnemigo = document.createElement('p')
-
-    sectionMensajes.innerHTML = resultado
-    nuevoAtaqueDelJugador.innerHTML = indexAtaqueJugador
-    nuevoAtaqueDelEnemigo.innerHTML = indexAtaqueEnemigo
-  
-    ataquesDelJugador.appendChild(nuevoAtaqueDelJugador) 
-    ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo) 
 }
 
 function indexAmbosOponentes(jugador, enemigo)
@@ -323,6 +344,7 @@ function combate()
         }
         else
         {
+            indexAmbosOponentes(index,index)
             crearMensaje('Perdiste 😢');
             victoriasEnemigo++
             spanVidasJugador.innerHTML = victoriasEnemigo
@@ -347,13 +369,22 @@ function revisarVidas()
     }
 }
 
+function crearMensaje(resultado)
+{
+    let nuevoAtaqueDelJugador = document.createElement('p')
+    let nuevoAtaqueDelEnemigo = document.createElement('p')
+
+    sectionMensajes.innerHTML = resultado
+    nuevoAtaqueDelJugador.innerHTML = indexAtaqueJugador
+    nuevoAtaqueDelEnemigo.innerHTML = indexAtaqueEnemigo
+  
+    ataquesDelJugador.appendChild(nuevoAtaqueDelJugador) 
+    ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo) 
+}
+
 function crearMensajeFinal(resultadoFinal)
 {
     sectionMensajes.innerHTML = resultadoFinal
-    
-    botonFuego.disabled = true
-    botonAgua.disabled = true
-    botonTierra.disabled = true
     botonReiniciar.style.display = 'block'
 }
 
@@ -364,7 +395,6 @@ function reiniciarJuego()
 
 function pintarCanvas()
 {
-
     mascotaJugadorObjeto.x = mascotaJugadorObjeto.x + mascotaJugadorObjeto.velocidadX
     mascotaJugadorObjeto.y = mascotaJugadorObjeto.y + mascotaJugadorObjeto.velocidadY
     lienzo.clearRect(0,0, mapa.width, mapa.height)
@@ -439,8 +469,6 @@ function sePresionoUnaTecla(event)
 function iniciarMapa()
 {
     mascotaJugadorObjeto = obtenerObjetoMascota(mascotaJugador)
-    mapa.width = 600
-    mapa.height = 400
     intervalo = setInterval(pintarCanvas, 50)
     window.addEventListener('keydown', sePresionoUnaTecla)
     window.addEventListener('keyup', detenerMovimiento)
@@ -481,5 +509,10 @@ function revisarColision(enemigo)
     }
 
     detenerMovimiento()
-    alert(`Hay colision con ${enemigo.nombre}`)
+    clearInterval(intervalo)
+    sectionSeleccionarAtaque.style.display = 'flex'
+    sectionVerMapa.style.display = 'none'
+    seleccionarMascotaEnemigo(enemigo)
 }
+
+window.addEventListener('load', iniciarJuego)
