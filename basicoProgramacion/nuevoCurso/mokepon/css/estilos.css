@@ -168,9 +168,16 @@ input:checked + label
     justify-content: center;
 }
 
-#mapa
+#ver-mapa button
 {
-    border: 2px solid white;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    background: transparent;
+    border: 4px solid rgb(97, 57, 34);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 1px;
 }
 
 @media (max-width: 720px)
@@ -186,3 +193,12 @@ input:checked + label
     }
 }
 
+@media (max-width: 720px)
+{
+    #ver-mapa div
+    {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
