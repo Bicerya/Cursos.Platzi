@@ -229,12 +229,12 @@ function seleccionarMascotaJugador()
 
 function seleccionarMokepon(mascotaJugador)
 {
-    fetch(`http://localhost:8080/mokepon${jugadorId}`, 
+    fetch(`http://localhost:8080/mokepon/${jugadorId}`, 
     {
         method: "post",
         headers: 
         {
-            "Content-Type": "applications/json"
+            "Content-Type": "application/json"
         },
         body: JSON.stringify(
             {
@@ -438,7 +438,8 @@ function pintarCanvas()
     mascotaJugadorObjeto.x = mascotaJugadorObjeto.x + mascotaJugadorObjeto.velocidadX
     mascotaJugadorObjeto.y = mascotaJugadorObjeto.y + mascotaJugadorObjeto.velocidadY
     lienzo.clearRect(0,0, mapa.width, mapa.height)
-    lienzo.drawImage(
+    lienzo.drawImage
+    (
         mapaBackground,
         0,
         0,
@@ -446,6 +447,9 @@ function pintarCanvas()
         mapa.height
     )
     mascotaJugadorObjeto.pintarMokepon()
+
+    enviarPosicion(mascotaJugadorObjeto.x,mascotaJugadorObjeto.y)
+
     hipodogeEnemigo.pintarMokepon()
     capipepoEnemigo.pintarMokepon()
     ratigueyaEnemigo.pintarMokepon()
@@ -456,6 +460,35 @@ function pintarCanvas()
         revisarColision(capipepoEnemigo)
         revisarColision(ratigueyaEnemigo)
     }
+}
+
+function enviarPosicion(x,y)
+{
+    fetch(`http://localhost:8080/mokepon/${jugadorId}/posicion`, 
+    {
+        method: "post",
+        headers: 
+        {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(
+            {
+                x,
+                y
+            })
+    })
+    .then(function(res)
+    {
+        if(res.ok)
+        {
+            res.json()
+                .then(function({enemigos})
+                {
+                    console.log(enemigos)
+                })
+            
+        }
+    })
 }
 
 function moverDerecha()
