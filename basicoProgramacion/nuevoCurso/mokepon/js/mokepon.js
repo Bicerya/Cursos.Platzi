@@ -25,6 +25,7 @@ const mapa = document.getElementById('mapa')
 const anchoMaximoDelMapa = 650
 
 let jugadorId = null
+let enemigoId = null
 let mokepones = []
 let mokeponesEnemigos = []
 let ataqueJugador =[]
@@ -281,8 +282,27 @@ function secuenciaAtaque()
                 console.log(ataqueJugador)
                 boton.disabled = true
             }
-            ataqueAleatorioEnemigo()
+            if(ataqueJugador.length === 5)
+            {
+                enviarAtaques()
+            }
         })
+    })
+}
+
+function enviarAtaques()
+{
+    fetch(`/mokepon/${jugadorId}/ataques`,
+    {
+        method: "post",
+        headers:
+        {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(
+            {
+                ataquees: ataqueJugador
+            })
     })
 }
 
@@ -469,15 +489,15 @@ function enviarPosicion(x,y)
                         const mokeponNombre = enemigo.mokepon.nombre || ""
                         if (mokeponNombre === "Hipodoge") 
                         {
-                            mokeponEnemigo = new Mokepon('Hipodoge', './imagenes/mokepons_mokepon_hipodoge_attack.png', 5, './imagenes/hipodoge.png')
+                            mokeponEnemigo = new Mokepon('Hipodoge', './imagenes/mokepons_mokepon_hipodoge_attack.png', 5, './imagenes/hipodoge.png', enemigo.id)
                         }
                         else if (mokeponNombre === "Capipepo")
                         {
-                            mokeponEnemigo = new Mokepon('Capipepo', './imagenes/mokepons_mokepon_capipepo_attack.png', 5, './imagenes/capipepo.png')
+                            mokeponEnemigo = new Mokepon('Capipepo', './imagenes/mokepons_mokepon_capipepo_attack.png', 5, './imagenes/capipepo.png',enemigo.id)
                         }
                         else if (mokeponNombre === "Ratigueya")
                         {
-                            mokeponEnemigo = new Mokepon('Ratigueya', './imagenes/mokepons_mokepon_ratigueya_attack.png', 5, './imagenes/ratigueya.png')
+                            mokeponEnemigo = new Mokepon('Ratigueya', './imagenes/mokepons_mokepon_ratigueya_attack.png', 5, './imagenes/ratigueya.png',enemigo.id)
                         }
 
                         mokeponEnemigo.x = enemigo.x
@@ -582,6 +602,7 @@ function revisarColision(enemigo)
 
     detenerMovimiento()
     clearInterval(intervalo)
+    enemigoId = enemigo.id
     sectionSeleccionarAtaque.style.display = 'flex'
     sectionVerMapa.style.display = 'none'
     seleccionarMascotaEnemigo(enemigo)
