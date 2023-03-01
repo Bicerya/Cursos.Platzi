@@ -165,7 +165,7 @@ function iniciarJuego()
 
 function unirseAlJuego()
 {
-    fetch("http://localhost:8080/unirse")
+    fetch("http://Servidor.local:8080/unirse")
         .then(function (res)
         {
             if(res.ok)
@@ -182,8 +182,7 @@ function unirseAlJuego()
 
 function seleccionarMascotaJugador()
 {
-    sectionSeleccionarMascota.style.display = 'none'
-
+  
     if (inputHipodoge.checked)
     {
         spanMascotaJugador.innerHTML = inputHipodoge.id
@@ -202,7 +201,10 @@ function seleccionarMascotaJugador()
     else
     {
         alert('Selecciona una mascota')
+        return
     }
+
+    sectionSeleccionarMascota.style.display = 'none'
 
     seleccionarMokepon(mascotaJugador)
 
@@ -213,7 +215,7 @@ function seleccionarMascotaJugador()
 
 function seleccionarMokepon(mascotaJugador)
 {
-    fetch(`http://localhost:8080/mokepon/${jugadorId}`, 
+    fetch(`http://Servidor.local:8080/mokepon/${jugadorId}`, 
     {
         method: "post",
         headers: 
@@ -304,6 +306,28 @@ function enviarAtaques()
                 ataquees: ataqueJugador
             })
     })
+
+    intervalo = setInterval(obtenerAtaques, 50)
+}
+
+function obtenerAtaques()
+{
+    fetch(`http://Servidor.local:8080/mokepon/${enemigoId}/ataques`)
+        .then(function (res)
+        {
+            if(res.ok)
+            {
+                res.json()
+                    .then(function({ataques})
+                    {
+                        if(ataques.length === 5)
+                        {
+                            ataqueEnemigo = ataques
+                            combate()
+                        }
+                    })
+            }
+        })
 }
 
 function seleccionarMascotaEnemigo()
@@ -357,6 +381,8 @@ function indexAmbosOponentes(jugador, enemigo)
 
 function combate()
 {
+    clearInterval(intervalo)
+
     for (let index = 0; index < ataqueJugador.length; index++) 
     {
         if(ataqueJugador[index] === ataqueEnemigo[index])
@@ -462,7 +488,7 @@ function pintarCanvas()
 
 function enviarPosicion(x,y)
 {
-    fetch(`http://localhost:8080/mokepon/${jugadorId}/posicion`, 
+    fetch(`http://Servidor.local:8080/mokepon/${jugadorId}/posicion`, 
     {
         method: "post",
         headers: 
@@ -482,22 +508,23 @@ function enviarPosicion(x,y)
             res.json()
                 .then(function({enemigos})
                 {
-                    console.log(enemigos)
-                    let mokeponEnemigo = null
                     mokeponesEnemigos = enemigos.map(function(enemigo)
                     {
+                        console.log(enemigo)
+                        let mokeponEnemigo = null
                         const mokeponNombre = enemigo.mokepon.nombre || ""
+
                         if (mokeponNombre === "Hipodoge") 
                         {
                             mokeponEnemigo = new Mokepon('Hipodoge', './imagenes/mokepons_mokepon_hipodoge_attack.png', 5, './imagenes/hipodoge.png', enemigo.id)
                         }
                         else if (mokeponNombre === "Capipepo")
                         {
-                            mokeponEnemigo = new Mokepon('Capipepo', './imagenes/mokepons_mokepon_capipepo_attack.png', 5, './imagenes/capipepo.png',enemigo.id)
+                            mokeponEnemigo = new Mokepon('Capipepo', './imagenes/mokepons_mokepon_capipepo_attack.png', 5, './imagenes/capipepo.png', enemigo.id)
                         }
                         else if (mokeponNombre === "Ratigueya")
                         {
-                            mokeponEnemigo = new Mokepon('Ratigueya', './imagenes/mokepons_mokepon_ratigueya_attack.png', 5, './imagenes/ratigueya.png',enemigo.id)
+                            mokeponEnemigo = new Mokepon('Ratigueya', './imagenes/mokepons_mokepon_ratigueya_attack.png', 5, './imagenes/ratigueya.png', enemigo.id)
                         }
 
                         mokeponEnemigo.x = enemigo.x
